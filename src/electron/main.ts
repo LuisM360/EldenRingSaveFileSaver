@@ -8,6 +8,10 @@ import { getPreloadPath } from "./pathResolver.js";
 
 const store = new Store();
 
+// Developer Test
+// Make sure to remove this line before production
+store.clear();
+
 function getEldenRingSaveLocation(): string | null {
   const platform = process.platform;
 
@@ -36,8 +40,8 @@ let mainWindow: BrowserWindow | null = null;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 440,
-    height: 600,
+    width: 600,
+    height: 700,
     resizable: false,
     maximizable: false,
     webPreferences: {
