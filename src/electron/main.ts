@@ -36,8 +36,10 @@ let mainWindow: BrowserWindow | null = null;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 440,
     height: 600,
+    resizable: false,
+    maximizable: false,
     webPreferences: {
       preload: getPreloadPath(),
       contextIsolation: true, // Enable context isolation for security
@@ -116,8 +118,21 @@ ipcMain.handle("backup-save", async () => {
   }
 
   try {
-    // Create timestamp for backup folder
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    // Create timestamp in 12-hour format: "YYYY-MM-DD hh-mm-ss AM/PM"
+    const now = new Date();
+    const timestamp = now
+      .toLocaleString("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      })
+      .replace(/[/:]/g, "-")
+      .replace(",", "");
+
     const backupPath = path.join(backupLocation, `backup-${timestamp}`);
 
     // Create backup directory if it doesn't exist
