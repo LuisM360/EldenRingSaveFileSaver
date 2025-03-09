@@ -1,5 +1,5 @@
 import "./App.css";
-import EldenRingBackup from "./components/EldenRingBackup";
+import EldenRingBackup from "../components/EldenRingBackup";
 function App() {
   return (
     <>
