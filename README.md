@@ -2,7 +2,9 @@
 
 A simple desktop application that helps you safely backup your Elden Ring save files. Built with Electron and React.
 
-![Demo](assets/demo.gif)
+<p align="center">
+  <img src="assets/demo.gif" alt="Demo" width="600"/>
+</p>
 
 ## Installation
 
