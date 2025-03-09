@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+# Elden Ring Save Backup Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple desktop application that helps you safely backup your Elden Ring save files. Built with Electron and React.
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="assets/demo.gif" alt="Demo" width="600"/>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+1. Download the latest release from the [Releases](https://github.com/LuisM360/EldenRingSaveFileSaver/releases) page
+2. Run the installer (or extract the portable version)
+3. Launch the application
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to Use
 
-- Configure the top-level `parserOptions` property like this:
+1. **First Launch**: When you first open the app, you'll need to select a backup location where your save files will be stored
+2. **Select Location**: Click "Choose Backup Location" and select a folder on your computer
+3. **Create Backup**: Click the "Create Backup" button to save your current game progress
+4. **View Backups**: Your backups will be saved in the chosen location with timestamps
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Each backup is stored in a separate folder with the format: `backup-YYYY-MM-DD hh-mm-ss AM/PM`
+
+## Development
+
+This project is built with:
+
+- Electron
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Create distribution
+npm run dist:win
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technical Details
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Save files are located in: `%APPDATA%/EldenRing/`
+- Backups preserve all file timestamps and attributes
+- The app runs in a secure context with proper electron security practices
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+[MIT License](LICENSE)
+
+## Support
+
+If you encounter any issues, please file them in the [GitHub Issues](https://github.com/yourusername/eldenringsavefilesaver/issues) section.
