@@ -68,4 +68,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-If you encounter any issues, please file them in the [GitHub Issues](https://github.com/yourusername/eldenringsavefilesaver/issues) section.
+If you encounter any issues, please file them in the [GitHub Issues](https://github.com/LuisM360/EldenRingSaveFileSaver/issues) section.
